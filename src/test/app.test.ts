@@ -8,3 +8,12 @@ describe("GET /", () => {
 		expect(await res.text()).toBe("Hello, GitHub Actions!");
 	});
 });
+
+describe("GET /:name", () => {
+	it("should return Hello, <name> for dynamic route", async () => {
+		const name = "Rivath";
+		const res = await app.request(`/${name}`);
+		expect(res.status).toBe(200);
+		expect(await res.text()).toBe(`Hello, ${name}!`);
+	});
+});
