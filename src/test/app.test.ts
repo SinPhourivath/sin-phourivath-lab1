@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import app from "../app.ts";
+import app from "../index.js";
 
 describe("GET /", () => {
 	it("should return Hello, GitHub Actions!", async () => {
